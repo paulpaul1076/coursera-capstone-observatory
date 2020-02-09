@@ -63,7 +63,7 @@ object Extraction extends ExtractionInterface {
         Location(row.getAs[Double]("latitude"), row.getAs[Double]("longitude")),
         fahrenheitToCelcius(row.getAs[Double]("temperature"))
       )).collect()
-      .map{
+      .map {
         case (year, month, day, location, temperature) =>
           (LocalDate.of(year, month, day), location, temperature)
       }
